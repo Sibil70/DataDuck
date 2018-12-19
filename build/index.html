@@ -13,24 +13,48 @@
         <header class="header">
           <div class="header__container">
             <div class="header__block"></div>
-            <button class="header__button button" type="button">Войти
-              <svg class="button__icon">
-                <use xlink:href="./assets/images/ic/svg/user.svg#user"></use>
-              </svg>
-            </button>
+            <button class="header__button button" type="button">Войти</button>
           </div>
         </header>
-        <h1>Главная</h1>
-        <form action="">
-          <label for="email">email</label>
-          <input mane="email" id="email"/>
-          <label for="password">password</label>
-          <input type="password" id="password"/>
-          <button>выйти</button>
-        </form><a href="./main.html">на главную</a>
-        <footer class="footer">
-          <h2>copyright &copy;</h2>
-        </footer>
+        <main class="main">
+          <div class="main__wrapper">
+            <div class="main__left-col">
+              <h1 class="main__title">Начните торговать прямо сейчас</h1>
+              <ul class="main__list">
+                <li class="main__item">Нет спреда — торгуйте с прозрачными и точными котировками</li>
+                <li class="main__item">Достаточно депозита в $10, чтобы начать торговать</li>
+              </ul>
+              <form class="form" action="">
+                <div class="form__row">
+                  <label class="form__input" for="email">Ваш e-mail
+                    <input class="form__input-area" mane="email" id="email" placeholder="example@mail.com |"/>
+                  </label>
+                </div>
+                <div class="form__row">   
+                  <label class="form__input" for="password">
+                    <input class="form__input-area" type="password" id="password" placeholder="Придумайте пароль"/>
+                  </label>
+                </div>
+                <div class="form__row">   
+                  <div class="form__text">Валюта для ввода и вывода средств</div>
+                  <input class="form__radio-btn" type="radio" name="currency"/>
+                  <input class="form__radio-btn" type="radio" name="currency"/>
+                  <input class="form__radio-btn" type="radio" name="currency"/>
+                </div>
+                <div class="form__row">
+                  <input class="input__check" type="checkbox" id="confirm" name="confirm"/>
+                  <label class="input__confirm" for="confirm">Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.</label>
+                </div>
+                <div class="form__row">
+                  <button class="form__btn">Зарегистрироваться</button>
+                </div>
+              </form>
+            </div>
+            <div class="main__right-col">
+              <div class="images__wrapper"></div>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
     <script src="./assets/scripts/index.bundle.js"></script>

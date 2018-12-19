@@ -20,19 +20,30 @@
     background-color: #fff;
 }
 .header__button{
+    cursor: pointer;
     font-family: "OpenSans-Bold", Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: bold;
     color: #FFFFFF;
-    letter-spacing: 0;
-    text-align: center;
-    line-height: 24px;
     border: 1px solid #D8E1E6;
     border-radius: 4px;
     background: transparent;
-
-    .button__icon{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 120px;
+    height: 40px;
+    &:before{
+        content: "";
+        display: inline-block;
         width:24px;
         height:24px;
+        background-image:url(../images/ic/small/user.svg);
+        margin-right: 10px;
+    }
+    &:hover {
+        background-color: $btn;
+        border: 1px solid $btn;
     }
 }

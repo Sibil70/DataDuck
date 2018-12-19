@@ -3,13 +3,32 @@ extends ../main.layout.pug
 block variables
     - var title = "Главная"
 block content
-    h1 Главная
-    form(action="")
-        label(for="email") email
-        input(mane="email" id="email")
-        label(for="password") password
-        input(type="password", id="password")
-        button выйти
-    a(href="./main.html") на главную
+    main.main
+        .main__wrapper
+            .main__left-col
+                h1.main__title Начните торговать прямо сейчас
+                ul.main__list
+                    li.main__item Нет спреда — торгуйте с прозрачными и точными котировками
+                    li.main__item Достаточно депозита в $10, чтобы начать торговать
+                form.form(action="")
+                    .form__row
+                        label.form__input(for="email") Ваш e-mail
+                            input.form__input-area(mane="email" id="email" placeholder="example@mail.com |")
+                    .form__row    
+                        label.form__input(for="password")
+                            input.form__input-area(type="password", id="password" placeholder="Придумайте пароль")
+                    .form__row    
+                        .form__text Валюта для ввода и вывода средств
+                        input.form__radio-btn(type="radio", name="currency")
+                        input.form__radio-btn(type="radio", name="currency")
+                        input.form__radio-btn(type="radio", name="currency")
+                    .form__row
+                        input.input__check(type="checkbox", id="confirm" name="confirm")
+                        label.input__confirm(for="confirm") Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.
+                    .form__row
+                        button.form__btn Зарегистрироваться
+            .main__right-col
+                .images__wrapper
+                    
 block scripts
     script(src='./assets/scripts/index.bundle.js')

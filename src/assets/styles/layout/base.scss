@@ -1,4 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+h1{
+    margin:0;
+}
 body, html {
     width: 100%;
     height: 100%;
@@ -14,6 +22,14 @@ body{
     color: $text-color;
 }
 
+input {outline: none;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: inset 0 0 0 50px $input_bg !important; /* Цвет фона */
+    -webkit-text-fill-color: $text-color !important; /* цвет текста */
+    color: $text-color !important; /* цвет текста */
+}
 .wrapper{
     width: 100%;
     overflow: hidden;
