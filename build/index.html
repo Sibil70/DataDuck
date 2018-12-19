@@ -4,19 +4,34 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Workadium</title>
-    <link rel="stylesheet" href="assets/styles/main.min.css"/>
+    <title>DataDuck | Главная</title>
+    <link rel="stylesheet" href="./assets/styles/main.min.css"/>
   </head>
   <body>
     <div class="wrapper">
-      <h1>Главная</h1>
-      <form action="">
-        <label for="email">email</label>
-        <input mane="email" id="email"/>
-        <label for="password">password</label>
-        <input type="password" id="password"/>
-        <button>выйти</button>
-      </form><a href="./main.html">на главную</a>
+      <div class="container">
+        <header class="header">
+          <div class="header__container">
+            <div class="header__block"></div>
+            <button class="header__button button" type="button">Войти
+              <svg class="button__icon">
+                <use xlink:href="./assets/images/ic/svg/user.svg#user"></use>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <h1>Главная</h1>
+        <form action="">
+          <label for="email">email</label>
+          <input mane="email" id="email"/>
+          <label for="password">password</label>
+          <input type="password" id="password"/>
+          <button>выйти</button>
+        </form><a href="./main.html">на главную</a>
+        <footer class="footer">
+          <h2>copyright &copy;</h2>
+        </footer>
+      </div>
     </div>
     <script src="./assets/scripts/index.bundle.js"></script>
   </body>

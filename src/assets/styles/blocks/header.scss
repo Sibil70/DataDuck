@@ -1,40 +1,38 @@
 .header{
     background-color:$background;
     width: 100%;
-    min-height: 75px;
+    height: 75px;
     color: white;
-    display: flex;
-    align-items: center;
+
 }
-.container{
-    width: 1060px;
+.header__container{
+    max-width: 1440px;
+    padding: 0 100px;
+    height: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 100%;
+    justify-content: space-between;
 }
-.logo{
-    &__img{
-    }
+.header__block {
+    width: 140px;
+    height: 16px;
+    background-color: #fff;
 }
-.adress{
-    display: flex;
-    flex-direction: column;
-    &__tel{
-        font-size: 21px;
-        font-family: 'Gotham';
-        font-weight: 700;
-        font-style: bold;
-        text-decoration: none;
-        color:white;
-    }
-    &__shedule{
-        font-size: 14px;
-        color: #ec1e79;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        text-align: right;
-        text-decoration: underline;
+.header__button{
+    font-family: "OpenSans-Bold", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 24px;
+    border: 1px solid #D8E1E6;
+    border-radius: 4px;
+    background: transparent;
+
+    .button__icon{
+        width:24px;
+        height:24px;
     }
 }

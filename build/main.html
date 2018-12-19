@@ -4,37 +4,41 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Workadium | Главная</title>
+    <title>DataDuck | Главная</title>
     <link rel="stylesheet" href="./assets/styles/main.min.css"/>
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
-        <div class="container">
-          <div class="logo"><img class="logo__img" src="./assets/images/logo.png" alt="логотип"/></div>
-          <adress class="adress"><a class="adress__tel" href="tel:+79117564050">+7-911-756-4050</a><span class="adress__shedule">График работы</span></adress>
+      <div class="container">
+        <header class="header">
+          <div class="header__container">
+            <div class="header__block"></div>
+            <button class="header__button button" type="button">Войти
+              <svg class="button__icon">
+                <use xlink:href="./assets/images/ic/svg/user.svg#user"></use>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <header class="header">
+          <div class="header__container">
+            <div class="header__block"></div>
+            <button class="header__button button" type="button">Войти
+              <svg class="button__icon">
+                <use xlink:href="./assets/images/ic/svg/user.svg#user"></use>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="banner"><img class="banner__image" src="../../assets/images/banner.png" alt="баннер"/></div>
+        <div class="maincontent">
+          <div class="features"></div>
+          <div class="news"></div>
         </div>
-      </header>
-      <div class="banner"><img class="banner__image" src="../../assets/images/banner.png" alt="баннер"/></div>
-      <div class="maincontent">
-        <div class="features"></div>
-        <div class="news"></div>
+        <footer class="footer">
+          <h2>copyright &copy;</h2>
+        </footer>
       </div>
-      <aside class="menu">
-        <nav class="nav">
-          <ul class="nav__list">
-            <li class="nav__item"><a class="nav__link" href="/main.html">
-                <div class="nav__desc">Главная</div></a></li>
-            <li class="nav__item"><a class="nav__link" href="/reviews.html">
-                <div class="nav__desc">Отзывы</div></a></li>
-            <li class="nav__item"><a class="nav__link" href="/prices.html">
-                <div class="nav__desc">Тарифы</div></a></li>
-          </ul>
-        </nav>
-      </aside>
-      <footer class="footer">
-        <h2>copyright &copy;</h2>
-      </footer>
     </div>
     <script src="main.bundle.js"></script>
   </body>

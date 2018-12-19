@@ -8,7 +8,7 @@ body, html {
 }
 
 body{
-    font-family: 'Roboto';
+    font-family: 'roboto';
     box-sizing: border-box;
     line-height: 1.42;
     color: $text-color;
@@ -19,9 +19,14 @@ body{
     overflow: hidden;
     min-height: 100%;
     position: relative;
-
+    background-color: $background;
 }
-.maincontent{
+
+.container{
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
