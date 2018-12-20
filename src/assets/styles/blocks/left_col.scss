@@ -255,10 +255,14 @@
         position: absolute;
         left: 0px;
         top: 0px;
-        width: 25px;
-        height: 25px;
+        width: 32px;
+        height: 32px;
         border-radius: 4px;
         background-color: $input_bg;
+        @include phones {
+            width: 25px;
+            height: 25px;
+        }
     }
     & +label:after{
         content: "";
@@ -276,6 +280,8 @@
         @include phones {
             width: 15px;
             height: 8px;
+            border-left: 2px solid $btn;
+            border-bottom: 2px solid $btn;
         }
     }
     &:checked + label:after {
