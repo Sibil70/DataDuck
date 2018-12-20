@@ -5,5 +5,6 @@ module.exports = {
     "btn": "#1C945D",
     "input_bg": "#212d3e",
     "input_border": "#20A86B",
-    "input_border-hover": "#20A86B88"
+    "input_border-hover": "#20A86B88",
+    "error": "#E15433"
 };

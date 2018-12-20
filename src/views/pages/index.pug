@@ -17,11 +17,16 @@ block content
                     .form__row    
                         label.form__input(for="password")
                             input.form__input-area(type="password", id="password" placeholder="Придумайте пароль")
-                    .form__row    
-                        .form__text Валюта для ввода и вывода средств
-                        input.form__radio-btn(type="radio", name="currency")
-                        input.form__radio-btn(type="radio", name="currency")
-                        input.form__radio-btn(type="radio", name="currency")
+                    .form__row
+                        .form__currency    
+                            .form__text Валюта для ввода и вывода средств
+                            .form__radio
+                                input.form__radio-btn.form__radio-btn_rub(type="radio", id="rub", name="currency")
+                                label.form__radio-fake(for="rub")
+                                input.form__radio-btn.form__radio-btn_dol(type="radio", id="dol", name="currency")
+                                label.form__radio-fake(for="dol")
+                                input.form__radio-btn.form__radio-btn_eur(type="radio", id="eur", name="currency")
+                                label.form__radio-fake(for="eur")
                     .form__row
                         input.input__check(type="checkbox", id="confirm" name="confirm")
                         label.input__confirm(for="confirm") Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.
