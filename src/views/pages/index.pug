@@ -10,16 +10,20 @@ block content
                 ul.main__list
                     li.main__item Нет спреда — торгуйте с прозрачными и точными котировками
                     li.main__item Достаточно депозита в $10, чтобы начать торговать
-                form.form(id="app" @submit="checkForm")
-                    p(v-if="errors.length")
-                        b Пожалуйста исправьте указанные ошибки:
-                        ul
-                            li(v-for="error in errors") {{ error }}
+                form.form(id="app", @submit="checkForm")
+                    //- p(v-if="errors.length")
+                    //-     b Пожалуйста исправьте указанные ошибки:
+                    //-     ul
+                    //-         li(v-for="error in errors") {{ error }}
                     .form__row
-                        label.form__input(for="email") Ваш e-mail
+                        //- .form__inputError(v-for="error in errors" v-if = "error===email")
+                        //-     p.form__inputError-email введите почту
+                        label.form__input(for="email" @click = "deleteEmailError") Ваш e-mail
                             input.form__input-area(type="email", name="email", v-model="email", id="email" placeholder="samplemail@mail.com |")
                     .form__row
-                        label.form__input(for="password")
+                        //- .form__inputError(v-for="error in errors" v-if = "error===password")
+                        //-     p.form__inputError-password Введите пароль
+                        label.form__input(for="password" @click = "deletePasswordError")
                             input.form__input-area(type="password", name="password", v-model="password", id="password" placeholder="Придумайте пароль")
                     .form__row
                         .form__currency    
@@ -32,16 +36,27 @@ block content
                                 input.form__radio-btn.form__radio-btn_eur(type="radio", id="eur", name="currency")
                                 label.form__radio-fake(for="eur")
                     .form__row
-                        input.input__check(type="checkbox", name="checkbox", v-model="checkbox", id="confirm" name="confirm")
+                        .form__inputError
+                            p.form__inputError-password Примите соглашение об оказании услуг
+                        input.input__check(type="checkbox", id="confirm", name="confirm")
                         label.input__confirm(for="confirm") Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.
                     .form__row
-                        button.form__btn(@submit="checkForm") Зарегистрироваться
+                        button.form__btn Зарегистрироваться
             .main__right-col
                 .images
                     .image__wrappe
                         img.image__macbook(src="./assets/images/mockups/macbook/dark.png", alt="macbook")
                     .image__wrapper
                         img.image__iphone(src="./assets/images/mockups/iphone/frontal-black.png", alt="macbook")
-                    
+    .popup#popup
+        .popup__wrapper
+            h2.popup__title Укажите валюту
+            ul.popup__list
+                li.popup__item
+                    label.popup__selector(for="rub") Рубль                      
+                li.popup__item
+                    label.popup__selector(for="dol") Доллар                  
+                li.popup__item
+                    label.popup__selector(for="eur") Евро                     
 block scripts
     script(src='./assets/scripts/index.bundle.js')

@@ -51,6 +51,7 @@
     margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
+    position: relative;
     &:last-child{
         margin-bottom: 0;
     }
@@ -59,13 +60,40 @@
     }
     &:nth-child(4){
         margin-bottom:32px; 
-        // @include phones {
-        //     margin-bottom: 75px;
-        // }
     }
     @include phones {
         margin-bottom: 25px;
     }
+}
+.form__inputError{
+    display: none;
+    font-size:14px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    position: absolute;
+    width: 280px;
+    height: 40px;
+    top: -55%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background: $error;
+    border-radius: 4px;
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 80%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        border-left: 10px solid  $error;
+        border-bottom: 10px solid  $error;
+        background: btn;
+        transform: rotate(-45deg);
+    }
+
 }
 .form__input{
     display: block;
@@ -83,6 +111,38 @@
     &:hover{
         border-color: $input_border-hover;
         transition: 0.3s;
+    }
+        &-error{
+        border-color: $error;
+        position: relative;
+        &::before{
+            content:"Ошибка";
+            text-align: center;
+            line-height: 40px;
+            color:#fff;
+            display: block;
+            position: absolute;
+            width: 280px;
+            height: 40px;
+            top: -55%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            background: $error;
+            border-radius: 4px;
+        }
+        &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50%;
+            top: -35%;;
+            width: 5px;
+            height: 5px;
+            border-radius: 1px;
+            border-left: 10px solid  $error;
+            border-bottom: 10px solid  $error;
+            transform: rotate(-45deg);
+        }
     }
     @include phones {
         height: 50px;

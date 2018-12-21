@@ -7,6 +7,7 @@
     <title>DataDuck | Главная</title>
     <link rel="stylesheet" href="./assets/styles/main.min.css"/>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -26,18 +27,13 @@
                 <li class="main__item">Достаточно депозита в $10, чтобы начать торговать</li>
               </ul>
               <form class="form" id="app" @submit="checkForm">
-                <p v-if="errors.length"><b>Пожалуйста исправьте указанные ошибки:</b>
-                  <ul>
-                    <li v-for="error in errors">{{ error }}</li>
-                  </ul>
-                </p>
                 <div class="form__row">
-                  <label class="form__input" for="email">Ваш e-mail
+                  <label class="form__input" for="email" @click="deleteEmailError">Ваш e-mail
                     <input class="form__input-area" type="email" name="email" v-model="email" id="email" placeholder="samplemail@mail.com |"/>
                   </label>
                 </div>
                 <div class="form__row">
-                  <label class="form__input" for="password">
+                  <label class="form__input" for="password" @click="deletePasswordError">
                     <input class="form__input-area" type="password" name="password" v-model="password" id="password" placeholder="Придумайте пароль"/>
                   </label>
                 </div>
@@ -55,11 +51,14 @@
                   </div>
                 </div>
                 <div class="form__row">
+                  <div class="form__inputError">
+                    <p class="form__inputError-password">Примите соглашение об оказании услуг</p>
+                  </div>
                   <input class="input__check" type="checkbox" id="confirm" name="confirm"/>
                   <label class="input__confirm" for="confirm">Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.</label>
                 </div>
                 <div class="form__row">
-                  <button class="form__btn" @submit="checkForm">Зарегистрироваться</button>
+                  <button class="form__btn">Зарегистрироваться</button>
                 </div>
               </form>
             </div>
@@ -71,6 +70,22 @@
             </div>
           </div>
         </main>
+        <div class="popup" id="popup">
+          <div class="popup__wrapper">
+            <h2 class="popup__title">Укажите валюту</h2>
+            <ul class="popup__list">
+              <li class="popup__item">
+                <label class="popup__selector" for="rub">Рубль                      </label>
+              </li>
+              <li class="popup__item">
+                <label class="popup__selector" for="dol">Доллар                  </label>
+              </li>
+              <li class="popup__item">
+                <label class="popup__selector" for="eur">Евро                     </label>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./assets/scripts/index.bundle.js"></script>
