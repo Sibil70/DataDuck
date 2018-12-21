@@ -8,9 +8,10 @@ var app = new Vue({
     },
     methods: {
       checkForm: function (e) {
+        var length = this.password.length
         var checkbox = document.getElementById('confirm');
 
-        if (this.email && this.password && checkbox.checked) {
+        if (this.email && this.password && checkbox.checked && length > 3) {
             return true;
         }
 
@@ -18,32 +19,43 @@ var app = new Vue({
   
         if (!this.email) {
             this.errors.push('Неверный адрес элекстронной почты');
-                var emailField = document.getElementById('email').parentNode;
-                emailField.classList.add('form__input-error');
+                var emailField = document.querySelector('.form__inputError-email').parentNode;
+                emailField.style.display = "block";
+                var input = document.getElementById('email').parentNode;
+                input.style.borderColor = "#e15433";
         }
 
-        if (!this.password) {
+        if (!this.password || length < 4) {
             this.errors.push('Неверный пароль');
-                var passField = document.getElementById('password').parentNode;
-                passField.classList.add('form__input-error');
+                var passField = document.querySelector('.form__inputError-password').parentNode;
+                passField.style.display = "block";
+                var input = document.getElementById('password').parentNode;
+                input.style.borderColor = "#e15433";
         }
             
         if (!checkbox.checked) {
-            var checkError = document.querySelector('.form__inputError');
+
+            var checkError = document.querySelector('.form__check-error');
             checkError.style.display = "block";
-        } else {
-            checkError.style.display = "none";
         }    
 
         e.preventDefault();
       },
       deleteEmailError: function () {
-        var emailField = document.getElementById('email').parentNode;
-        emailField.classList.remove('form__input-error');
+        var emailField = document.querySelector('.form__inputError-email').parentNode;
+        emailField.style.display = "none";
+        var input = document.getElementById('email').parentNode;
+        input.style.borderColor = "#20a86b";
       },
       deletePasswordError: function () {
-        var passField = document.getElementById('password').parentNode;
-        passField.classList.remove('form__input-error');
+        var passField = document.querySelector('.form__inputError-password').parentNode;
+        passField.style.display = "none";
+        var input = document.getElementById('password').parentNode;
+        input.style.borderColor = "#20a86b";
+      },
+      deleteCheckError: function () {
+        var checkError = document.querySelector('.form__check-error');
+        checkError.style.display = "none";
       }
     }
   });

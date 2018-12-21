@@ -28,11 +28,17 @@
               </ul>
               <form class="form" id="app" @submit="checkForm">
                 <div class="form__row">
+                  <div class="Error">
+                    <p class="form__inputError-email">Введите почту</p>
+                  </div>
                   <label class="form__input" for="email" @click="deleteEmailError">Ваш e-mail
                     <input class="form__input-area" type="email" name="email" v-model="email" id="email" placeholder="samplemail@mail.com |"/>
                   </label>
                 </div>
                 <div class="form__row">
+                  <div class="Error">
+                    <p class="form__inputError-password">Неверный пароль</p>
+                  </div>
                   <label class="form__input" for="password" @click="deletePasswordError">
                     <input class="form__input-area" type="password" name="password" v-model="password" id="password" placeholder="Придумайте пароль"/>
                   </label>
@@ -50,9 +56,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="form__row">
-                  <div class="form__inputError">
-                    <p class="form__inputError-password">Примите соглашение об оказании услуг</p>
+                <div class="form__row" @click="deleteCheckError">
+                  <div class="form__check-error">
+                    <p>Примите соглашение об оказании услуг</p>
                   </div>
                   <input class="input__check" type="checkbox" id="confirm" name="confirm"/>
                   <label class="input__confirm" for="confirm">Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.</label>

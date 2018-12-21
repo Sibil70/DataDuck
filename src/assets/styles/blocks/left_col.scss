@@ -65,7 +65,7 @@
         margin-bottom: 25px;
     }
 }
-.form__inputError{
+.Error{
     display: none;
     font-size:14px;
     text-align: center;
@@ -348,6 +348,36 @@
         opacity:1;
         transition: 0.3s;
     }
+}
+.form__check-error{
+    display: none;
+    font-size:14px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    position: absolute;
+    width: 280px;
+    height: 40px;
+    top: -65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: $error;
+    border-radius: 4px;
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 80%;
+        width: 5px;
+        height: 5px;
+        border-radius: 1px;
+        border-left: 10px solid  $error;
+        border-bottom: 10px solid  $error;
+        background: btn;
+        transform: rotate(-45deg);
+    }
+
 }
 .form__btn{
     width: 100%;
