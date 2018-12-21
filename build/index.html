@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>DataDuck | Главная</title>
     <link rel="stylesheet" href="./assets/styles/main.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -24,15 +25,20 @@
                 <li class="main__item">Нет спреда — торгуйте с прозрачными и точными котировками</li>
                 <li class="main__item">Достаточно депозита в $10, чтобы начать торговать</li>
               </ul>
-              <form class="form" action="">
+              <form class="form" id="app" @submit="checkForm">
+                <p v-if="errors.length"><b>Пожалуйста исправьте указанные ошибки:</b>
+                  <ul>
+                    <li v-for="error in errors">{{ error }}</li>
+                  </ul>
+                </p>
                 <div class="form__row">
                   <label class="form__input" for="email">Ваш e-mail
-                    <input class="form__input-area" mane="email" id="email" placeholder="samplemail@mail.com |"/>
+                    <input class="form__input-area" type="email" name="email" v-model="email" id="email" placeholder="samplemail@mail.com |"/>
                   </label>
                 </div>
-                <div class="form__row">   
+                <div class="form__row">
                   <label class="form__input" for="password">
-                    <input class="form__input-area" type="password" id="password" placeholder="Придумайте пароль"/>
+                    <input class="form__input-area" type="password" name="password" v-model="password" id="password" placeholder="Придумайте пароль"/>
                   </label>
                 </div>
                 <div class="form__row">
@@ -53,7 +59,7 @@
                   <label class="input__confirm" for="confirm">Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.</label>
                 </div>
                 <div class="form__row">
-                  <button class="form__btn">Зарегистрироваться</button>
+                  <button class="form__btn" @submit="checkForm">Зарегистрироваться</button>
                 </div>
               </form>
             </div>

@@ -45,6 +45,7 @@
     justify-content: center;
     width: 120px;
     height: 40px;
+    outline: none;
     @include phones{
         width: 100px;
         height: 30px;

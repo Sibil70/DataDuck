@@ -10,13 +10,17 @@ block content
                 ul.main__list
                     li.main__item Нет спреда — торгуйте с прозрачными и точными котировками
                     li.main__item Достаточно депозита в $10, чтобы начать торговать
-                form.form()
+                form.form(id="app" @submit="checkForm")
+                    p(v-if="errors.length")
+                        b Пожалуйста исправьте указанные ошибки:
+                        ul
+                            li(v-for="error in errors") {{ error }}
                     .form__row
                         label.form__input(for="email") Ваш e-mail
-                            input.form__input-area(type="email" id="email" placeholder="samplemail@mail.com |")
-                    .form__row    
+                            input.form__input-area(type="email", name="email", v-model="email", id="email" placeholder="samplemail@mail.com |")
+                    .form__row
                         label.form__input(for="password")
-                            input.form__input-area(type="password", id="password" placeholder="Придумайте пароль")
+                            input.form__input-area(type="password", name="password", v-model="password", id="password" placeholder="Придумайте пароль")
                     .form__row
                         .form__currency    
                             .form__text Валюта для ввода и вывода средств
@@ -28,10 +32,10 @@ block content
                                 input.form__radio-btn.form__radio-btn_eur(type="radio", id="eur", name="currency")
                                 label.form__radio-fake(for="eur")
                     .form__row
-                        input.input__check(type="checkbox", id="confirm" name="confirm")
+                        input.input__check(type="checkbox", name="checkbox", v-model="checkbox", id="confirm" name="confirm")
                         label.input__confirm(for="confirm") Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.
                     .form__row
-                        button.form__btn Зарегистрироваться
+                        button.form__btn(@submit="checkForm") Зарегистрироваться
             .main__right-col
                 .images
                     .image__wrappe
