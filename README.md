@@ -10,7 +10,7 @@
 * https://sibil70.github.io/DataDuck/build/
 
 ## При разработке проекта использованны следующие технологии
-* HTML5, CSS3, SCSS, PUG, Vue.js, JQuerry, Node.js, npm, GULP, Webpack, Git и др.
+* HTML5, CSS3, SCSS, PUG, Vue.js, JQuerry, npm, GULP, Webpack, Git и др.
 
 ## Как установить проект
 1. Проверить установлены ли у вас node.js, npm 5;
