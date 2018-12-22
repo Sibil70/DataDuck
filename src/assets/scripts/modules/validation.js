@@ -4,7 +4,8 @@ var app = new Vue({
       errors: [],
       email: '',
       password: '',
-      emails: ['sans87@inbox.ru', 'email@emal.com', 'examlpe@mail.de']
+      emails: ['sans87@inbox.ru', 'email@emal.com', 'examlpe@mail.de'],
+      userConfirm: true
     },
     methods: {
       checkForm: function (e) {
@@ -12,18 +13,18 @@ var app = new Vue({
         var checkbox = document.getElementById('confirm');
         var users = this.emails;
         var newUser = this.email;
+        
 
+        
         function newUserCheck(arr, elem) {
           for (var i = 0; i < arr.length; i++) {
-              if (arr[i] === elem) {
-                 
+                if (arr[i] === elem) {
                 return false;
               }
           }
-          
           return true;
-      }
-      var userConfirm = newUserCheck(users, newUser);
+        }
+        this.userConfirm = newUserCheck(users, newUser);
 
         if (this.email && this.password && checkbox.checked && length > 3 && userConfirm) {
             return true;

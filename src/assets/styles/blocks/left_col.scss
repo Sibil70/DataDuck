@@ -96,7 +96,6 @@
 
 }
 .form__input{
-    display: block;
     cursor: pointer;
     height: 63px;
     flex: 1;
@@ -145,7 +144,7 @@
         }
     }
     @include phones {
-        height: 50px;
+        height: 50px;       
     }
 }
 .form__input-area{
@@ -419,3 +418,23 @@
 
     }
 }
+
+.floating-label {
+    position: absolute;
+    pointer-events: none;
+    left: 20px;
+    top: 50%;
+    transform:translateY(-50%);
+    transition: 0.2s ease all;
+    font-size: 16px
+  }
+
+.form__input-area:focus ~ .floating-label{
+  top: 8px;
+  bottom: 10px;
+  left: 20px;
+  font-size: 11px;
+  opacity: 1;
+}
+
+// .form__input-area:not(:focus):valid ~ .floating-label
