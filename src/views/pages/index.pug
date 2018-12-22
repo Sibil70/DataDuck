@@ -37,22 +37,25 @@ block content
                         input.input__check(type="checkbox", id="confirm", name="confirm")
                         label.input__confirm(for="confirm" ) Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.
                     .form__row
-                        button.form__btn Зарегистрироваться
+                        .wrongUser
+                            p.wrongUser__txt Учётная запись с указанным e-mail уже существует
+                    .form__row
+                        button(type='submit').form__btn Зарегистрироваться
             .main__right-col
                 .images
                     .image__wrappe
                         img.image__macbook(src="./assets/images/mockups/macbook/dark.png", alt="macbook")
                     .image__wrapper
                         img.image__iphone(src="./assets/images/mockups/iphone/frontal-black.png", alt="macbook")
-    .popup#popup
-        .popup__wrapper
-            h2.popup__title Укажите валюту
-            ul.popup__list
-                li.popup__item
-                    label.popup__selector(for="rub") Рубль                      
-                li.popup__item
-                    label.popup__selector(for="dol") Доллар                  
-                li.popup__item
-                    label.popup__selector(for="eur") Евро                     
+    //- .popup#popup
+    //-     .popup__wrapper
+    //-         h2.popup__title Укажите валюту
+    //-         ul.popup__list
+    //-             li.popup__item
+    //-                 label.popup__selector(for="rub") Рубль                      
+    //-             li.popup__item
+    //-                 label.popup__selector(for="dol") Доллар                  
+    //-             li.popup__item
+    //-                 label.popup__selector(for="eur") Евро                     
 block scripts
     script(src='./assets/scripts/index.bundle.js')

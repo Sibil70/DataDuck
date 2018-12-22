@@ -4,14 +4,28 @@ var app = new Vue({
       errors: [],
       email: '',
       password: '',
-      emails: ['sans87@inbox.ru', 'email@emal']
+      emails: ['sans87@inbox.ru', 'email@emal.com', 'examlpe@mail.de']
     },
     methods: {
       checkForm: function (e) {
         var length = this.password.length
         var checkbox = document.getElementById('confirm');
+        var users = this.emails;
+        var newUser = this.email;
 
-        if (this.email && this.password && checkbox.checked && length > 3) {
+        function newUserCheck(arr, elem) {
+          for (var i = 0; i < arr.length; i++) {
+              if (arr[i] === elem) {
+                 
+                return false;
+              }
+          }
+          
+          return true;
+      }
+      var userConfirm = newUserCheck(users, newUser);
+
+        if (this.email && this.password && checkbox.checked && length > 3 && userConfirm) {
             return true;
         }
 
@@ -34,10 +48,13 @@ var app = new Vue({
         }
             
         if (!checkbox.checked) {
-
             var checkError = document.querySelector('.form__check-error');
             checkError.style.display = "block";
-        }    
+        }
+        
+        // if(!newUser) {
+        //   var wrongUser = document.
+        // }
 
         e.preventDefault();
       },
