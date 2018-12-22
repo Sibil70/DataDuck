@@ -1,7 +1,7 @@
-var emailInput = document.querySelector('.js-email-input');
+var emailInput = document.querySelector('.js-email-input'),
+    passwordInput = document.querySelector('.js-password-input');
 
 emailInput.addEventListener('blur', function(){
-    console.log ('salut!')
     if(emailInput.value.length > 0 ){
         emailInput.classList.add('form__input-area--up')
     } else {
@@ -9,10 +9,7 @@ emailInput.addEventListener('blur', function(){
     }
 });
 
-var passwordInput = document.querySelector('.js-password-input');
-
 passwordInput.addEventListener('blur', function(){
-    console.log ('salut!')
     if(passwordInput.value.length > 0 ){
         passwordInput.classList.add('form__input-area--up')
     } else {

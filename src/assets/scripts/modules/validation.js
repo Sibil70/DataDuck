@@ -9,15 +9,15 @@ var app = new Vue({
     },
     methods: {
       checkForm: function (e) {
-        var length = this.password.length;
-        var checkbox = document.getElementById('confirm');
-        var users = this.emails;
-        var newUser = this.email;
-        var emailField = document.querySelector('.form__inputError-email').parentNode;
-        var inputEmail = document.getElementById('email').parentNode;
-        var passField = document.querySelector('.form__inputError-password').parentNode;
-        var inputPassword = document.getElementById('password').parentNode;
-        var checkError = document.querySelector('.form__check-error');
+        var length = this.password.length,
+         checkbox = document.getElementById('confirm'),
+         users = this.emails,
+         newUser = this.email,
+         emailField = document.querySelector('.form__input-error-email').parentNode,
+         inputEmail = document.getElementById('email').parentNode,
+         passField = document.querySelector('.form__input-error-password').parentNode,
+         inputPassword = document.getElementById('password').parentNode,
+         checkError = document.querySelector('.form__check-error');
         
         function newUserCheck(arr, elem) {
           for (var i = 0; i < arr.length; i++) {
@@ -29,9 +29,7 @@ var app = new Vue({
         }
         this.userConfirm = newUserCheck(users, newUser);
 
-        console.log(this.userConfirm);
-
-        if (this.email && this.password && checkbox.checked && length > 3 && userConfirm) {
+        if (this.email && this.password && checkbox.checked && length > 3 && newUserCheck(users, newUser)) {
             return true;
         }
 
@@ -57,13 +55,13 @@ var app = new Vue({
         e.preventDefault();
       },
       deleteEmailError: function () {
-        var emailField = document.querySelector('.form__inputError-email').parentNode,
+        var emailField = document.querySelector('.form__input-error-email').parentNode,
             input = document.getElementById('email').parentNode;
         emailField.style.display = "none";
         input.style.borderColor = "#20a86b";
       },
       deletePasswordError: function () {
-        var passField = document.querySelector('.form__inputError-password').parentNode,
+        var passField = document.querySelector('.form__input-error-password').parentNode,
             input = document.getElementById('password').parentNode;
         passField.style.display = "none";
         input.style.borderColor = "#20a86b";

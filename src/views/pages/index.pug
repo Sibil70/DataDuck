@@ -12,21 +12,21 @@ block content
                     li.main__item Достаточно депозита в $10, чтобы начать торговать
                 form.form(id="app", @submit="checkForm")
                     .form__row
-                        .Error
-                            p.form__inputError-email Введите почту
+                        .error
+                            p.form__input-error-email Введите почту
                         label.form__input(for="email" @click = "deleteEmailError") 
                             input.form__input-area.js-email-input(type="email", name="email", v-model="email", id="email")
                             span.form__placeholder Ваш e-mail
                     .form__row
-                        .Error
-                            p.form__inputError-password Неверный пароль
+                        .error
+                            p.form__input-error-password Неверный пароль
                         label.form__input(for="password" @click = "deletePasswordError")
                             input.form__input-area.js-password-input(type="password", name="password", v-model="password", id="password")
                             span.form__placeholder Придумайте пароль
                     .form__row
                         .form__currency    
                             .form__text Валюта для ввода и вывода средств
-                            .form__radioBtns
+                            .form__radio-btns
                                 input.form__radio-btn.form__radio-btn_rub(type="radio", id="rub", name="currency")
                                 label.form__radio-fake(for="rub")
                                 input.form__radio-btn.form__radio-btn_dol(type="radio", id="dol", name="currency")
@@ -39,8 +39,8 @@ block content
                         input.input__check(type="checkbox", id="confirm", name="confirm")
                         label.input__confirm(for="confirm" ) Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.
                     .form__row(v-show = '!userConfirm')
-                        .wrongUser
-                            p.wrongUser__txt Учётная запись с указанным e-mail уже существует
+                        .wrong-user
+                            p.wrong-user__txt Учётная запись с указанным e-mail уже существует
                     .form__row
                         button(type='submit').form__btn Зарегистрироваться
             .main__right-col
@@ -49,15 +49,15 @@ block content
                         img.image__macbook(src="./assets/images/mockups/macbook/dark.png", alt="macbook")
                     .image__wrapper
                         img.image__iphone(src="./assets/images/mockups/iphone/frontal-black.png", alt="macbook")
-    //- .popup#popup
-    //-     .popup__wrapper
-    //-         h2.popup__title Укажите валюту
-    //-         ul.popup__list
-    //-             li.popup__item
-    //-                 label.popup__selector(for="rub") Рубль                      
-    //-             li.popup__item
-    //-                 label.popup__selector(for="dol") Доллар                  
-    //-             li.popup__item
-    //-                 label.popup__selector(for="eur") Евро                     
+    .popup#popup
+        .popup__wrapper
+            h2.popup__title Укажите валюту
+            ul.popup__list
+                li.popup__item
+                    label.popup__selector(for="rub") Рубль                      
+                li.popup__item
+                    label.popup__selector(for="dol") Доллар                  
+                li.popup__item
+                    label.popup__selector(for="eur") Евро                     
 block scripts
     script(src='./assets/scripts/index.bundle.js')

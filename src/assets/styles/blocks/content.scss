@@ -28,7 +28,6 @@
         flex-direction: column;
     }
     @include phones {
-        margin: 0 10px;
         align-items: center;
     }
 }

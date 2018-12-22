@@ -28,16 +28,16 @@
               </ul>
               <form class="form" id="app" @submit="checkForm">
                 <div class="form__row">
-                  <div class="Error">
-                    <p class="form__inputError-email">Введите почту</p>
+                  <div class="error">
+                    <p class="form__input-error-email">Введите почту</p>
                   </div>
                   <label class="form__input" for="email" @click="deleteEmailError"> 
                     <input class="form__input-area js-email-input" type="email" name="email" v-model="email" id="email"/><span class="form__placeholder">Ваш e-mail</span>
                   </label>
                 </div>
                 <div class="form__row">
-                  <div class="Error">
-                    <p class="form__inputError-password">Неверный пароль</p>
+                  <div class="error">
+                    <p class="form__input-error-password">Неверный пароль</p>
                   </div>
                   <label class="form__input" for="password" @click="deletePasswordError">
                     <input class="form__input-area js-password-input" type="password" name="password" v-model="password" id="password"/><span class="form__placeholder">Придумайте пароль</span>
@@ -46,7 +46,7 @@
                 <div class="form__row">
                   <div class="form__currency">   
                     <div class="form__text">Валюта для ввода и вывода средств</div>
-                    <div class="form__radioBtns">
+                    <div class="form__radio-btns">
                       <input class="form__radio-btn form__radio-btn_rub" type="radio" id="rub" name="currency"/>
                       <label class="form__radio-fake" for="rub"></label>
                       <input class="form__radio-btn form__radio-btn_dol" type="radio" id="dol" name="currency"/>
@@ -64,8 +64,8 @@
                   <label class="input__confirm" for="confirm">Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.</label>
                 </div>
                 <div class="form__row" v-show="!userConfirm">
-                  <div class="wrongUser">
-                    <p class="wrongUser__txt">Учётная запись с указанным e-mail уже существует</p>
+                  <div class="wrong-user">
+                    <p class="wrong-user__txt">Учётная запись с указанным e-mail уже существует</p>
                   </div>
                 </div>
                 <div class="form__row">
@@ -81,6 +81,22 @@
             </div>
           </div>
         </main>
+        <div class="popup" id="popup">
+          <div class="popup__wrapper">
+            <h2 class="popup__title">Укажите валюту</h2>
+            <ul class="popup__list">
+              <li class="popup__item">
+                <label class="popup__selector" for="rub">Рубль                      </label>
+              </li>
+              <li class="popup__item">
+                <label class="popup__selector" for="dol">Доллар                  </label>
+              </li>
+              <li class="popup__item">
+                <label class="popup__selector" for="eur">Евро                     </label>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
     <script src="./assets/scripts/index.bundle.js"></script>
