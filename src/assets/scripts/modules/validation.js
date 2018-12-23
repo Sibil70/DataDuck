@@ -45,7 +45,7 @@ var app = new Vue({
         emailField.firstChild.innerHTML = 'Введите почту';
       } else if (!this.validEmail(this.email)) {
         addError(emailField, inputEmail);
-        emailField.firstChild.innerHTML = 'Адрес не коректный';
+        emailField.firstChild.innerHTML = 'Адрес не корректный';
       }
 
 
