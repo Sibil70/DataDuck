@@ -10,7 +10,7 @@ var app = new Vue({
     methods: {
       checkForm: function (e) {
         var length = this.password.length,
-         checkbox = document.getElementById('confirm'),
+         checkBox = document.getElementById('confirm'),
          users = this.emails,
          newUser = this.email,
          emailField = document.querySelector('.form__input-error-email').parentNode,
@@ -29,7 +29,7 @@ var app = new Vue({
         }
         this.userConfirm = newUserCheck(users, newUser);
 
-        if (this.email && this.password && checkbox.checked && length > 3 && newUserCheck(users, newUser)) {
+        if (this.email && this.password && checkBox.checked && length > 3 && newUserCheck(users, newUser)) {
             return true;
         }
 
@@ -42,13 +42,20 @@ var app = new Vue({
 
         if (!this.email) {
           addError(emailField, inputEmail);
+          emailField.firstChild.innerHTML = 'Введите почту';
         }
 
-        if (!this.password || length < 4) {
+        if (!this.password) {
           addError(passField, inputPassword);
+          passField.firstChild.innerHTML = 'Введите пароль';
+        } 
+        
+        if (this.password && length < 4) {
+          addError(passField, inputPassword);
+          passField.firstChild.innerHTML = 'Пароль не менее 4х символов';
         }
-            
-        if (!checkbox.checked) {
+    
+        if (!checkBox.checked) {
           checkError.style.display = "block";
         }
 

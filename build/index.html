@@ -29,7 +29,7 @@
               <form class="form" id="app" @submit="checkForm">
                 <div class="form__row">
                   <div class="error">
-                    <p class="form__input-error-email">Введите почту</p>
+                    <p class="form__input-error-email"> </p>
                   </div>
                   <label class="form__input" for="email" @click="deleteEmailError"> 
                     <input class="form__input-area js-email-input" type="email" name="email" v-model="email" id="email"/><span class="form__placeholder">Ваш e-mail</span>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="form__row">
                   <div class="error">
-                    <p class="form__input-error-password">Неверный пароль</p>
+                    <p class="form__input-error-password"> </p>
                   </div>
                   <label class="form__input" for="password" @click="deletePasswordError">
                     <input class="form__input-area js-password-input" type="password" name="password" v-model="password" id="password"/><span class="form__placeholder">Придумайте пароль</span>
@@ -63,7 +63,7 @@
                   <input class="input__check" type="checkbox" id="confirm" name="confirm"/>
                   <label class="input__confirm" for="confirm">Я совершеннолетний, ознакомился и принимаю соглашение об оказании услуг.</label>
                 </div>
-                <div class="form__row" v-show="!userConfirm">
+                <div class="form__row" v-if="!userConfirm">
                   <div class="wrong-user">
                     <p class="wrong-user__txt">Учётная запись с указанным e-mail уже существует</p>
                   </div>
